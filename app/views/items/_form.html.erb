@@ -11,14 +11,11 @@
        </ul>
      </div>
    <% end %>
-   <%= form_group_tag(item.errors[:title]) do %>
-     <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control', placeholder: "Enter item title" %>
+    <%= form_tag(item.errors[:name]) do %>
+     <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter item name" %>
 <% end %>
- <%= form_group_tag(item.errors[:body]) do %>
-     <%= f.label :body %>
-     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter item body" %>
-   <% end %>
+
    <div class="form-group">
      <%= f.submit "Save", class: 'btn btn-success' %>
    </div>
