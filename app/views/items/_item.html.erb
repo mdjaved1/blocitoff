@@ -1,13 +1,11 @@
-<% @user.items.each do |item| %>
-  <div class="media">
+ <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
         <%= item.name %>
         <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
       </h4>
       <small>
-        submitted <%= time_ago_in_words(item.created_at) %> ago <br>
+        <%= distance_of_time_in_words(Time.now, item.created_at.to_date + 7) %> left <br>
       </small>
     </div>
   </div>
-<% end %>
