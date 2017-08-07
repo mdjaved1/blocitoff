@@ -15,6 +15,18 @@ class ItemsController < ApplicationController
        render :new
      end
   end
+  
+  def destroy 
+    @item = Item.find(params[:id])
+    
+    if @item.destroy
+      flash[:notice] = "Item was completed"
+    else
+      flash[:error] = "There was an error saving the item. Please try again."
+      
+    end
+  end  
+  
   private 
   
   def item_params 
